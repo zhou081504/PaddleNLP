@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "银行卡号": ["付款卡号", "payment_card"]
+  },
+  "known_values": {
+    "业务编号": ["TEST-ORDER-ABC"]
+  }
+}

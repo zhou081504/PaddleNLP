@@ -1,41 +1,11 @@
-[tool.isort]
-profile = 'black'
-known_third_party = ["paddle"]
-skip = ['paddlenlp/transformers/__init__.py']
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests_app"]
+pythonpath = ["."]
 
 [tool.black]
 line-length = 119
-target_version = ['py35', 'py36', 'py37', 'py38', 'py39', 'py310']
-exclude = ['.flake8']
-
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "-ra -q "
-pythonpath = ["."]
-testpaths = [
-    "tests/data",
-    "tests/dataaug",
-    "tests/datasets",
-    "tests/experimental",
-    "tests/generation",
-    "tests/layers",
-    "tests/metrics",
-    "tests/pose",
-    "tests/ops",
-    "tests/trainer",
-    "tests/transformers",
-    "tests/peft",
-    "tests/prompt",
-    "tests/mergekit",
-    # "tests/taskflow",  TODO (paddle 2.5.1 breaks this test suite, debug later)
-    "tests/utils",
-    "tests/longlora",       
-]
-python_files = [
-    "test.py",
-    "test_*.py"
-]
-filterwarnings = [
-    "ignore::UserWarning",
-    'ignore::DeprecationWarning',
-]
+target-version = ["py310"]

@@ -1,0 +1,4 @@
+include README.md LICENSE
+include desensitize.py evaluate.py benchmark.py resource_monitor.py
+include requirements/paddlenlp.txt
+recursive-include text_redaction/rules/resources *.json
